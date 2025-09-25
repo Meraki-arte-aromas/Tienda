@@ -1,0 +1,264 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff 0%, #9b8973 100%);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Playfair Display', serif;
+}
+.navbar-brand{
+  border-bottom: 1px solid #fff;
+}
+
+.section-title {
+  font-size: 2.9rem;
+  font-family: inherit;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+/* NAVBAR */
+.navbar {
+  min-height: 120px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+.navbar-brand {
+  font-size: 1.7rem !important;
+  letter-spacing: 1px;
+}
+.navbar-nav .nav-link {
+  font-size: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.bg-custom {
+  background-color: #867b71 !important;
+}
+
+/* Hero section */
+.hero {
+  
+  height: 35vh;
+  min-height: 350px;
+  background: transparent;
+}
+
+/* Botón personalizado */
+.btn-custom {
+  background-color: #81684d !important;
+  color: #fff;
+  border: none;
+  padding: 13px !important;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-custom:hover {
+  background: #222;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.producto-card {
+  border: none;
+  background: rgba(255,255,255,0.97);
+  transition: box-shadow .2s, transform .2s;
+}
+.producto-card:hover {
+  box-shadow: 0 8px 32px 0 #a6988977;
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Carrusel de productos */
+#productosCarousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px 0 #a6988977;
+  background: #fff;
+}
+
+#productosCarousel img {
+  max-height: 580px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+#productosCarousel .carousel-caption {
+  position: static;
+  background: rgba(155, 137, 115, 0.93); /* Color igual al fondo de la página */
+  margin-top: 0; /* Quita el margen entre caption e imagen */
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  #productosCarousel {
+    max-width: 98vw;
+  }
+  #productosCarousel img {
+    max-height: 240px;
+    
+  }
+  #productosCarousel .carousel-caption {
+    padding: 1rem 0.6rem 0.5rem 0.6rem;
+    font-size: 0.98rem;
+  }
+}
+
+/* Footer */
+footer {
+  font-size: 1.1rem;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+footer a, footer p, footer small {
+  font-size: 1.25rem;
+}
+footer .section-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .hero {
+    height: 40vh;
+  }
+  .navbar-brand {
+    font-size: 1.5rem !important;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.08rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  footer .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    height: 30vh;
+    min-height: 180px;
+  }
+  .navbar-brand {
+    font-size: 1.1rem !important;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+  }
+  .section-title, footer .section-title {
+    font-size: 1.4rem;
+  }
+  footer {
+    font-size: 1rem;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+  }
+}
+
+.btn-ver {
+  background-color: #81684d; /* mismo color que el navbar */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-ver:hover {
+  background-color: #867b71;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+/* Asegura que todo el card sea un flex vertical */
+.producto-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* ya lo tenías con h-100, pero reforzamos */
+}
+
+/* Card body ocupa el espacio restante */
+.producto-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* toma todo el espacio restante */
+}
+
+/* Botón siempre al final */
+.producto-card .btn-ver {
+    margin-top: auto; /* empuja el botón al fondo */
+}
+
+.card-img-top{
+  max-height: 300px;
+
+}
+
+
+.intro-text {
+  font-size: 1.35rem;
+  text-align: center;
+  color: #212529; /* mismo tono oscuro que usás en otros textos */
+  max-width: 900px;
+  margin: 2rem auto;
+  line-height: 1.6;
+  font-weight: 400;
+  opacity: 0;                /* invisible al inicio */
+  transform: translateX(-50px); /* desplazado hacia la izquierda */
+  animation: slideIn 1.2s ease-out forwards; /* animación */
+}
+/* Animación */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical */
+  height: 10vh;           /* ocupa toda la pantalla */
+}
+
+.btn-custom2 {
+  background-color: #81684d !important;
+  color: #fff;
+  border: none;
+  padding: 13px !important;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none; /* para que no tenga subrayado */
+}
+
+.btn-custom2:hover {
+  background: #222;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.carousel-inner img {
+  max-height: 900px;   /* límite en pantallas grandes */
+  object-fit: contain;
+  /* ajusta la imagen sin recortar */
+}
+.carousel{
+  background-color: #a6988977;
+}
